@@ -2,7 +2,7 @@ import { Todo } from "@/lib/drizzle"
 
 const Getdata = async () => {
     try {
-        const res = await fetch("http://localhost:3001/api/todo", {
+        const res = await fetch("http://localhost:3000/api/todo", {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -21,10 +21,10 @@ const Getdata = async () => {
 
 const TodoList = async () => {
     const res: { getData: Todo[] } = await Getdata();
-    console.log(res);
+    // console.log(res);
 
     return (
-        <>
+        <div className="max-h-[350px] overflow-auto">
 
             {
                 res.getData.map((item: Todo) => {
@@ -38,7 +38,7 @@ const TodoList = async () => {
                     )
                 })
             }
-        </>
+        </div>
     )
 }
 

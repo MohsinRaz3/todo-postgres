@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ getData: res })
 
     } catch (err) {
-        console.log((err as { message: string }).message);
+        //  console.log((err as { message: string }).message);
         return NextResponse.json({ message: "something went wrong" })
     }
 }
